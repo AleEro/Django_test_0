@@ -1,9 +1,12 @@
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+        <li>
+            <a href="/polls/{{ question.id }}/">post №{{question.id}} {{ question.question_text }}</a>
+            <br><a>{{ question.pub_date }}</a>
+        </li><br>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+<p>No polls are available.</p>
 {% endif %}
